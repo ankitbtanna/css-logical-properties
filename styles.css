@@ -1,0 +1,145 @@
+body {
+  text-align: inline-start;
+}
+
+h2 {
+  border-inline-start: 5px solid red;
+  padding-inline-start: 10px;
+}
+
+#example2 {
+  /* don't do this */
+  /*   direction: rtl; */
+}
+
+#example3 {
+  writing-mode: vertical-rl;
+  max-height: 25vh;
+}
+
+#example1,
+#example2 {
+  writing-mode: horizontal-tb;
+}
+
+.content {
+  width: 65%;
+  max-width: 60ch;
+  margin-left: 3em;
+  /*   margin-inline: auto; */
+}
+
+#example4 {
+  writing-mode: vertical-lr;
+  max-height: 25vh;
+}
+
+/* section {
+  position: relative;
+  border: 5px solid red;
+  margin-block-end: 1em;
+}
+ */
+/* section::after {
+  content: '';
+  position: absolute;
+  background: red;
+  opacity: .4;
+  width: 100%;
+  height: 100%;
+  inset: 1em -2em;
+} */
+
+/* =========================
+   GENERAL STYLES 
+   NOT RELATED TO THE TIP
+============================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-primary: #ee6352;
+  --clr-secondary: #d16e8d;
+  --clr-accent: #f7f7ff;
+  --clr-gradient: linear-gradient(
+    -90deg,
+    var(--clr-primary),
+    var(--clr-secondary)
+  );
+  --ff-title: bungee, sans-serif;
+  --ff-body: canada-type-gibson, sans-serif;
+  --fw-body: 300;
+  --fw-bold: 800;
+  --fw-title: 400;
+  --fw-number: 800;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--ff-body);
+  font-weight: var(--fw-body);
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover,
+a:focus {
+  color: var(--clr-primary);
+}
+
+:focus {
+  outline: 5px solid var(--clr-accent);
+  outline-offset: 3px;
+}
+
+.title {
+  padding: 1em 0 2em;
+  margin: 0;
+  background: var(--clr-gradient);
+  position: relative;
+  z-index: 1000;
+  clip-path: polygon(0 0, 100% 0%, 100% 60%, 0% 100%);
+  text-transform: uppercase;
+  text-shadow: 3px 5px 10px rgba(0, 0, 0, 0.2);
+  font-size: calc(1rem + 3vw);
+  font-family: var(--ff-title);
+  font-weight: var(--fw-title);
+  color: white;
+}
+
+.title span {
+  font-weight: var(--fw-number);
+  color: black;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  font-size: 5em;
+  top: -30%;
+  z-index: -1;
+  opacity: 0.25;
+}
+
+nav {
+  position: fixed;
+  left: 2em;
+}
+
+html {
+  /*   scroll-behavior: smooth; */
+  /*   scroll-padding-top: 5rem; */
+}
+
+section:target {
+  outline: 0.125rem dotted red;
+  outline-offset: 1rem;
+}
