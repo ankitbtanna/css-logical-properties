@@ -1,0 +1,60 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+  align-items: center;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.flow > * + * {
+  margin-block-end: 1em;
+}
+
+.title {
+  background-color: lightpink;
+  border-radius: 10px;
+  padding-inline: 1em;
+  padding-block: 1em;
+}
+
+.title span.highlight {
+  background-color: yellow;
+  display: inline-block;
+  border-bottom: 5px dotted darkgoldenrod;
+}
+
+.title.min {
+  width: min(50%, 400px);
+}
+
+.title.max {
+  width: max(50%, 400px);
+}
+
+.title.clamp {
+  width: clamp(200px, 50%, 400px);
+}
+
+.title.minmax {
+  display: grid;
+  width: 50%;
+  grid-template-columns: 1fr minmax(75%, 1fr);
+}
+
+.title.minmax div {
+  border: 1px solid fuchsia;
+}
